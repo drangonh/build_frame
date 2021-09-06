@@ -1,0 +1,14 @@
+{
+  "name": "build_frame",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:drangonh/build_frame.git",
+  "author": "DragonYellow <786676631@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2"
+  }
+}
