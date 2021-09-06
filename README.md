@@ -167,7 +167,7 @@ module.exports = {
 
 ## TypeScript
 
-- yarn add -D typescript && npx tsc --init
+- yarn add -D typescript && npx tsc --init  
   incremental 设置为 true，允许增量编译，有助于加快编译速度。
   target 设置为 ESNEXT，即直接输出为最新的 ES 标准。
   module 设置为 ESNext，即面向未来的 ESM 模块化。
@@ -182,7 +182,20 @@ module.exports = {
   如果开发的是一个 NPM 包项目，declaration 需要改为 true。
   最后加上 include 和 exclude 选项，告诉编译器需要编译和忽略什么。
 
+## Prettier 代码格式化
 
+- yarn add -D prettier
+- .prettierrc
+
+```
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5"
+}
+```
+
+- 在 VSCode 中，通过在 Workspace 配置文件中选中 Editor: Format On Save 选项实现保存前自动格式化。
 
 # 参考链接:
 
