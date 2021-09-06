@@ -49,6 +49,7 @@ module.exports = { extends: ['@commitlint/config-conventional'] };
 ```
 
 - 安装 husky,npm install -D husky
+
 - 新建文件夹:.husky
   npx husky add .husky/pre-commit "npx --no-install lint-staged"
   npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
