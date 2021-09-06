@@ -231,6 +231,11 @@ module.exports = {
 };
 ```
 
+## React
+
+- yarn add react react-dom  
+  yarn add -D @types/react @types/react-dom
+
 # 参考链接:
 
 [react+ts 项目搭建](https://zhuanlan.zhihu.com/p/403970666)  
