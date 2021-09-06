@@ -54,9 +54,11 @@ module.exports = { extends: ['@commitlint/config-conventional'] };
   npx husky add .husky/pre-commit "npx --no-install lint-staged"
   npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 
-## git代码管控交互式方案
-* yarn add -D commitizen cz-conventional-changelog @commitlint/config-conventional @commitlint/cli commitlint-config-cz cz-customizable husky
-* package.json配置
+## git 代码管控交互式方案
+
+- yarn add -D commitizen cz-conventional-changelog @commitlint/config-conventional @commitlint/cli commitlint-config-cz cz-customizable husky
+- package.json 配置
+
 ```
 "scripts": {
   "commit":"git-cz",
@@ -75,7 +77,9 @@ module.exports = { extends: ['@commitlint/config-conventional'] };
     }
 }
 ```
-* commitlint.config.js
+
+- commitlint.config.js
+
 ```
 module.exports = {
   extents: [
@@ -117,7 +121,9 @@ module.exports = {
   }
 }
 ```
-* 新建.cz-config.js
+
+- 新建.cz-config.js
+
 ```
 module.exports = {
   types: [
@@ -154,10 +160,12 @@ module.exports = {
 };
 ```
 
-
-
-
+- 代码提交
+  git add .
+  yarn commit
+  git push
 
 # 参考链接:
-[react+ts项目搭建](https://zhuanlan.zhihu.com/p/403970666)
-[commit规范方案探讨](https://www.cnblogs.com/dahe1989/p/13803548.html)
+
+[react+ts 项目搭建](https://zhuanlan.zhihu.com/p/403970666)  
+[commit 规范方案探讨](https://www.cnblogs.com/dahe1989/p/13803548.html)
