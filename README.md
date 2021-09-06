@@ -197,6 +197,40 @@ module.exports = {
 
 - 在 VSCode 中，通过在 Workspace 配置文件中选中 Editor: Format On Save 选项实现保存前自动格式化。
 
+## ESLint 代码校验
+
+- yarn add -D eslint
+  yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
+  yarn add -D eslint-config-airbnb eslint-config-airbnb-typescript
+  yarn add -D eslint-plugin-import eslint-plugin-jsx-a11y
+  yarn add -D eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks
+
+* .eslintrc.js 创建
+
+```
+// .eslintrc.js
+
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/jsx-runtime',
+    'prettier',
+  ],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  rules: {
+    // 在这里添加需要覆盖的规则
+  }
+};
+```
+
 # 参考链接:
 
 [react+ts 项目搭建](https://zhuanlan.zhihu.com/p/403970666)  
