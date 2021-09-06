@@ -28,7 +28,6 @@ module.exports = {
     footer: '关闭的issues列表. E.g.: #31, #34:\n',
     confirmCommit: '确认提交?'
   },
-  
   allowCustomScopes: true,
   allowBreakingChanges: ["feat", "fix"]
 };
