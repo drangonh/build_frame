@@ -165,6 +165,25 @@ module.exports = {
   yarn commit
   git push
 
+## TypeScript
+
+- yarn add -D typescript && npx tsc --init
+  incremental 设置为 true，允许增量编译，有助于加快编译速度。
+  target 设置为 ESNEXT，即直接输出为最新的 ES 标准。
+  module 设置为 ESNext，即面向未来的 ESM 模块化。
+  allowJS 及 checkJS 设置为 true，允许编译 JavaScript 文件。
+  jsx 设置为 react-jsx，本文中我们不会使用到 Babel，因此是直接通过 TSC 将 JSX 代码片段编译为 JS 代码片段。 另外，react-jsx 是 TypeScript 在 4.1 引入的新特性，它可以让我们不需要再每一个 JSX / TSX 文件中写 import React from 'react'语句。
+  outDir 设置为 ./dist/es，dist 是我们的发行（distribution）根目录，而 es 是我们默认的 ESM 模块发行目录。
+  rootDir 设置为 ./src，这是我们存放源代码的目录，请顺手创建。
+  strict 改为 true，即启用所有严格类型检查选项。
+  moduleResolution 改为 node，将模块解析模式设为 Node.js。
+  allowSyntheticDefaultImports 改为 true，这样可以让 import React from 'react' 这样的语句不会报错。当然如今 esModuleInterop 已经默认开启，也会起到隐式声明的作用。
+  如果你和我一样需要用到 decorator 特性，需要将 experimentalDecorators 和 emitDecoratorMetadata 改为 true
+  如果开发的是一个 NPM 包项目，declaration 需要改为 true。
+  最后加上 include 和 exclude 选项，告诉编译器需要编译和忽略什么。
+
+
+
 # 参考链接:
 
 [react+ts 项目搭建](https://zhuanlan.zhihu.com/p/403970666)  
