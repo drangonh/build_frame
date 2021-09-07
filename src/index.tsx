@@ -1,9 +1,11 @@
 import { render } from 'react-dom';
+import { Root } from '@/components/Root';
+import './index.less';
 
-import { Hello } from './components/Hello';
+
 
 function App() {
-  return <Hello name="world" />;
+  return <Root />;
 }
 
-render(<App />, document.getElementById('react-mount-point'));
+render(<App />, document.getElementById('root'));
