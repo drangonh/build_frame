@@ -236,6 +236,12 @@ module.exports = {
 - yarn add react react-dom  
   yarn add -D @types/react @types/react-dom
 
+## 分支说明
+* main:主分支,之后选择一下分支之一合并
+* webpack,继承webpack打包功能和配置
+* vite,继承vite打包功能和配置  
+之后会在webpack和vite中实现redux全套功能和router配置,还有语言国际化,hook使用等功能框架
+
 # 参考链接:
 
 [react+ts 项目搭建](https://zhuanlan.zhihu.com/p/403970666)  
