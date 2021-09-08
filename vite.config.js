@@ -13,8 +13,8 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import {
   defineConfig
 } from 'vite';
+import vitePluginImp from 'vite-plugin-imp';
 import reactJsx from 'vite-react-jsx';
-
 
 export default defineConfig({
   base: '',
@@ -27,5 +27,23 @@ export default defineConfig({
   plugins: [
     reactJsx(),
     reactRefresh(),
+    vitePluginImp({
+      libList: [
+        {
+          libName: 'lodash',
+          libDirectory: '',
+          camel2DashComponentName: false,
+          style: () => {
+            return false;
+          },
+        },
+        {
+          libName: 'antd-mobile',
+          style(name) {
+            return `antd-mobile/lib/${name}/style/index.css`
+          },
+        },
+      ]
+    })
   ],
 });
