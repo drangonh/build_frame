@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import { Example } from './components/Example';
+import ShoppingCart from './components/ShoppingCart';
 import './styles/index.less';
 
-render(<Example />, document.getElementById('vite-root'));
+render(<ShoppingCart />, document.getElementById('vite-root'));
