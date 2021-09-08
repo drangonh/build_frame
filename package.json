@@ -5,6 +5,8 @@
   "repository": "git@github.com:drangonh/build_frame.git",
   "author": "DragonYellow <786676631@qq.com>",
   "license": "MIT",
+  "module": "/dist/es/index.js",
+  "types": "./dist/es/index.d.ts",
   "scripts": {
     "build": "webpack --config scripts/webpack/webpack.prod.config.js",
     "dev": "webpack serve --config scripts/webpack/webpack.dev.config.js",
@@ -35,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "clean-terminal-webpack-plugin": "^3.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "commitizen": "^4.2.4",
     "commitlint-config-cz": "^0.13.2",
     "css-loader": "^6.2.0",
