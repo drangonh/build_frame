@@ -5,14 +5,21 @@
   "repository": "git@github.com:drangonh/build_frame.git",
   "author": "DragonYellow <786676631@qq.com>",
   "license": "MIT",
-  "module": "/dist/es/index.js",
-  "types": "./dist/es/index.d.ts",
   "scripts": {
     "build": "webpack --config scripts/webpack/webpack.prod.config.js",
     "dev": "webpack serve --config scripts/webpack/webpack.dev.config.js",
     "start": "npm run dev",
-    "prepare": "husky install",
     "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -22,13 +29,12 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-rc.6",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-rc",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "clean-terminal-webpack-plugin": "^3.0.0",
-    "clean-webpack-plugin": "^4.0.0",
     "commitizen": "^4.2.4",
     "commitlint-config-cz": "^0.13.2",
     "css-loader": "^6.2.0",
@@ -59,15 +65,5 @@
     "webpack-dev-server": "^4.1.0",
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.0-3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-    }
   }
 }
