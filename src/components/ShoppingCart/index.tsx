@@ -15,18 +15,24 @@ class ShoppingCart extends React.Component<Props, State> {
     };
   }
 
+  clickBtn = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, show: boolean): void => {
+    const { isOpen } = this.state;
+    this.setState({
+      isOpen: !isOpen
+    })
+  }
+
   render() {
+    const show = true;
     const { isOpen } = this.state;
     return (
       <div className={styles.cartContainer}>
         <button
           type='button'
           className={styles.button}
-          onClick={() => {
-            this.setState({ isOpen });
-          }}
+          onClick={e => this.clickBtn(e, show)}
         >
-          购物车 2 (件)
+          购物车 3 (件)
         </button>
         <div
           className={styles.cartDropDown}
@@ -44,4 +50,6 @@ class ShoppingCart extends React.Component<Props, State> {
   }
 }
 
-export default ShoppingCart;
+export {
+  ShoppingCart
+};

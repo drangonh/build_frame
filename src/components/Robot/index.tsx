@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './index.module.css'
+import styles from './index.module.less';
 
-interface RobotProps {
+export interface RobotProps {
   id: number;
   name: string;
   email: string;
@@ -17,4 +17,6 @@ const Robot: React.FC<RobotProps> = ({ id, name, email }) => {
   );
 };
 
-export default Robot;
+export {
+  Robot
+};

@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './index.module.less';
+import styles from './LoginPage.module.less';
 
 
 export interface ExampleProps {
@@ -7,8 +7,8 @@ export interface ExampleProps {
   title?: string;
 }
 
-export function Example({ className, title = 'Example' }: ExampleProps) {
-  return (
+export const LoginPage:React.FC<ExampleProps>=({ className, title = 'Example' }:ExampleProps)=>{
+  return  (
     <div className={cn(styles.container, className)}>
       <a
         target="_blank"

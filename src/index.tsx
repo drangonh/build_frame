@@ -1,5 +1,8 @@
 import { render } from 'react-dom';
-import ShoppingCart from './components/ShoppingCart';
+import { PageRouter } from './router';
 import './styles/index.less';
 
-render(<ShoppingCart />, document.getElementById('vite-root'));
+render(
+  <PageRouter />
+  , document.getElementById('vite-root'));
+ 
