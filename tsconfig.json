@@ -6,7 +6,11 @@
     "target": "ESNEXT", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 'ES2021', or 'ESNEXT'. */
     "module": "ESNext", /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
     // 列出了编译期间需要被包括进来的库文件
-    "lib": ["DOM","DOM.Iterable","ESNext"],                                   /* Specify library files to be included in the compilation. */
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ], /* Specify library files to be included in the compilation. */
     "allowJs": true, /* Allow javascript files to be compiled. */
     "checkJs": true, /* Report errors in .js files. */
     // 支持react代码
@@ -21,7 +25,7 @@
     // "tsBuildInfoFile": "./",                     /* Specify file to store incremental compilation information */
     // "removeComments": true,                      /* Do not emit comments to output. */
     // 编译错误的时候不会生成JavaScript代码
-    "noEmit": true,                              /* Do not emit outputs. */
+    "noEmit": true, /* Do not emit outputs. */
     // "importHelpers": true,                       /* Import emit helpers from 'tslib'. */
     // "downlevelIteration": true,                  /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     // 编译器会将每个文件作为单独的模块来使用。
@@ -70,7 +74,9 @@
     "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
     /* Advanced Options */
     "skipLibCheck": true, /* Skip type checking of declaration files. */
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+    // 允许倒入json模块
+    "resolveJsonModule": true
   },
   // 列出我们需要编译的文件,"**" - 任意子目录,"*" - 任意文件名
   "include": [

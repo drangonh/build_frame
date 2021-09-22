@@ -29,6 +29,7 @@ module.exports = {
     'no-use-before-define': 'off',
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["off"],
-    "object-shorthand": ["error", "always"]
+    "object-shorthand": ["error", "always"],
+    "import/no-extraneous-dependencies": "off"
   },
 };
