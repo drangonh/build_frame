@@ -1,10 +1,8 @@
 import {
-  CHANGE_LANGUAGE,
-  ADD_LANGUAGE,
-  LanguageActionType,
+  ADD_LANGUAGE, CHANGE_LANGUAGE, LanguageActionType
 } from './languageAction';
 
-interface LanguageType {
+export interface LanguageType {
   language: string;
   languageList: { name: string; code: string }[];
 }
@@ -22,7 +20,10 @@ export default (state = defaultLanguage, action: LanguageActionType) => {
     case CHANGE_LANGUAGE:
       return { ...state, language: action.payload };
     case ADD_LANGUAGE:
-      return {};
+      return {
+        ...state,
+        languageList:[...state.languageList,action.payload]
+      };
     default:
       return state;
   }

@@ -33,3 +33,7 @@ handleStoreChange = () => {
 const action = addLanguageActionCreator("新语言", "new_lang")
 store.dispatch(action);
 ```
+
+## 类型断言 as
+
+- 当程序无法判断当前值的类型时,人为的指定类型

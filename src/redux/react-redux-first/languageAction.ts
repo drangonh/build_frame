@@ -2,12 +2,12 @@ export const CHANGE_LANGUAGE = 'change_language';
 export const ADD_LANGUAGE = 'add_language';
 
 interface ChangeLanguageAction {
-  type: string;
-  payload: string;
+  type: typeof CHANGE_LANGUAGE;
+  payload: 'zh' | 'en';
 }
 
 interface AddLanguageAction {
-  type: string;
+  type: typeof ADD_LANGUAGE;
   payload: {
     name: string;
     code: string;
@@ -30,10 +30,10 @@ export const addLanguageActionCreator = (
 };
 
 export const ChangeLanguageActionCreator = (
-  payload: string
+  languageCode: 'en' | 'zh'
 ): ChangeLanguageAction => {
   return {
     type: CHANGE_LANGUAGE,
-    payload,
+    payload: languageCode,
   };
 };
