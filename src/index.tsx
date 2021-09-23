@@ -1,11 +1,10 @@
+import 'antd/dist/antd.css';
+import React from 'react';
 import { render } from 'react-dom';
-import React from 'react'
-import { PageRouter } from './router';
+import './i18n/configs';
+import Root from './redux/react-redux-first';
 import './styles/index.less';
-import './i18n/configs'
 
 render(
-  <React.StrictMode>
-    <PageRouter />
-  </React.StrictMode>
+  <Root />
   , document.getElementById('vite-root'));

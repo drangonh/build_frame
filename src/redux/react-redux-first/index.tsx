@@ -1,15 +1,18 @@
-import { render } from 'react-dom';
-import React from 'react'
-import { Provider } from 'react-redux'
+import React from 'react';
+import { Provider } from 'react-redux';
+import '../../i18n/configs';
 import { PageRouter } from '../../router';
-import './styles/index.less';
-import './i18n/configs'
-import {store} from './store'
+import '../../styles/index.less';
+import store from './store';
 
-render(
-  <React.StrictMode>
-    <Provider store={store} >
-      <PageRouter />
-    </Provider>
-  </React.StrictMode>
-  , document.getElementById('vite-root'));
+const View = () => {
+  return (
+    <React.StrictMode>
+      <Provider store={store} >
+        <PageRouter />
+      </Provider>
+    </React.StrictMode>
+  )
+}
+
+export default View

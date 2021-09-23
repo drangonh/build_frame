@@ -1,9 +1,7 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
+  BrowserRouter as Router, Redirect, Route,
+  Switch
 } from 'react-router-dom'
 import { HomeRoutes } from './routes'
 
@@ -15,6 +13,7 @@ export const PageRouter: React.FC = () => {
           {
             HomeRoutes.map((route, index) => {
               return <Route
+                exact
                 component={route.component}
                 path={route.path}
               />
@@ -22,7 +21,7 @@ export const PageRouter: React.FC = () => {
           }
 
           <Route path="/">
-            <Redirect to="/home" />
+            <Redirect exact to="/home" />
           </Route>
         </Switch>
       </Router>

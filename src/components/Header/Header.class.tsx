@@ -1,3 +1,4 @@
+import { GlobalOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Input, Layout, Menu, Typography } from "antd";
 import { MenuInfo } from "rc-menu/lib/interface";
 import React from "react";
@@ -5,14 +6,13 @@ import { withTranslation, WithTranslation } from "react-i18next";
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import { Dispatch } from "redux";
-import logo from "../../assets/logo.svg";
-import styles from "./Header.module.css";
 import {
   addLanguageActionCreator,
   ChangeLanguageActionCreator
-} from "./languageAction";
+} from "../../redux/react-redux-first/languageAction";
 // import { StaticContext } from "react-router";
-import { RootState } from "./store";
+import { RootState } from "../../redux/react-redux-first/store";
+import styles from "./Header.module.less";
 
 type PropsType = RouteComponentProps & // react-router 路由props类型
   WithTranslation & // i18n props类型
@@ -32,7 +32,7 @@ class HeaderComponnet extends React.Component<
       // 处理新语言添加action
       addLanguage("新语言", "new_lang")
     } else {
-      changeLanguage("en")
+      changeLanguage(e.key === 'zh' ? 'zh' : 'en')
     }
   };
 
@@ -56,7 +56,7 @@ class HeaderComponnet extends React.Component<
                   </Menu.Item>
                 </Menu>
               }
-              icon={null}
+              icon={<GlobalOutlined />}
             >
               {language === "zh" ? "中文" : "English"}
             </Dropdown.Button>
@@ -77,7 +77,6 @@ class HeaderComponnet extends React.Component<
             onClick={() => history.push("/")}
             onKeyDown={() => history.push("/")}
           >
-            <img src={logo} alt="logo" className={styles["App-logo"]} />
             <Typography.Title level={3} className={styles.title}>
               {t("header.title")}
             </Typography.Title>

@@ -1,4 +1,7 @@
 import cn from 'classnames';
+import { Header } from '@/components';
+
+
 import styles from './LoginPage.module.less';
 
 
@@ -10,6 +13,7 @@ export interface ExampleProps {
 export const LoginPage:React.FC<ExampleProps>=({ className, title = 'Example' }:ExampleProps)=>{
   return  (
     <div className={cn(styles.container, className)}>
+      <Header />
       <header className={styles.header}>
         <h1 className={styles.title}>{title}</h1>
         <svg
