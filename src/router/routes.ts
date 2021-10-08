@@ -1,5 +1,5 @@
-import { LoginPage } from '@/page';
-import {Home} from './constant' 
+import { LoginPage } from '@/redux/react-redux-first/login';
+import { Home } from './constant';
 
 const HomeRoutes = [
   {

@@ -13,6 +13,7 @@ export const PageRouter: React.FC = () => {
           {
             HomeRoutes.map((route, index) => {
               return <Route
+                key={index.toString()}
                 exact
                 component={route.component}
                 path={route.path}
