@@ -1,4 +1,4 @@
-import { useSelector } from "@/redux/hook";
+
 import { GlobalOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Input, Layout, Menu, Typography } from "antd";
 import { MenuInfo } from "rc-menu/lib/interface";
@@ -6,21 +6,19 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { useSelector } from "@/redux/hook";
 import {
   addLanguageActionCreator,
   ChangeLanguageActionCreator
-} from "../../redux/react-redux-first/languageAction";
+} from "../../redux/react-redux-second/language/languageAction";
 import styles from "./Header.module.less";
-
-
 
 const HeaderSecond: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const language = useSelector(store => store.language);
-  const languageList = useSelector(store => {
-    return store.languageList
-  });
+  const languageReducer= useSelector(store => store.languageReducer );
+  const {language,languageList} =languageReducer
+  
   const { t } = useTranslation();
 
   const menuClickHandler = (e: MenuInfo) => {

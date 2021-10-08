@@ -1,4 +1,4 @@
-import { LoginPage } from '@/redux/react-redux-first/login';
+import { LoginPage } from '@/redux/react-redux-second/login';
 import { Home } from './constant';
 
 const HomeRoutes = [
