@@ -16,10 +16,9 @@ import styles from "./Header.module.less";
 const HeaderSecond: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const language = useSelector(store => store.language);
-  const languageList = useSelector(store => {
-    return store.languageList
-  });
+  const language = useSelector(store => store.languageReducer.language);
+  const languageList = useSelector(store => store.languageReducer.languageList);
+
   const { t } = useTranslation();
 
   const menuClickHandler = (e: MenuInfo) => {
@@ -34,7 +33,6 @@ const HeaderSecond: React.FC = () => {
     }
   };
 
-  console.log(languageList)
   return (
     <div className={styles["app-header"]}>
       {/* top-header */}

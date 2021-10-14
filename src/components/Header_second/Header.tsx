@@ -33,7 +33,6 @@ const HeaderSecond: React.FC = () => {
     }
   };
 
-  console.log(languageList)
   return (
     <div className={styles["app-header"]}>
       {/* top-header */}

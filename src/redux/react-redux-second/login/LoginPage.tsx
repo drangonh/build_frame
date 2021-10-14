@@ -1,9 +1,10 @@
 import cn from 'classnames';
-import { HeaderSecond } from '@/components';
-
-
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from '../../hook';
+import { HeaderSecond } from '../Header_second/Header';
+import { giveMeDataActionCreator } from '../recommendProducts/recommendProductsActions';
 import styles from './LoginPage.module.less';
-
 
 export interface ExampleProps {
   className?: string;
@@ -11,6 +12,17 @@ export interface ExampleProps {
 }
 
 export const LoginPage:React.FC<ExampleProps>=({ className, title = 'Example' }:ExampleProps)=>{
+  
+  const dispatch = useDispatch()
+  const language = useSelector((state) => state.languageReducer.language);
+
+  const productList = useSelector((state) => state.recommendProductsReducer.productList as string[]);
+
+  useEffect(()=>{
+    dispatch(giveMeDataActionCreator());
+  },[dispatch])
+  
+  console.log(productList)
   return  (
     <div className={cn(styles.container, className)}>
       <HeaderSecond />

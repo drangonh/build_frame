@@ -2,14 +2,9 @@ import {
   FETCH_RECOMMEND_PRODUCTS_FAIL,
   FETCH_RECOMMEND_PRODUCTS_START,
   FETCH_RECOMMEND_PRODUCTS_SUCCESS,
-  RecommendProductAction
+  RecommendProductAction,
+  RecommendProductsState
 } from "./recommendProductsActions";
-
-interface RecommendProductsState {
-  productList: any[];
-  loading: boolean;
-  error: string | null;
-}
 
 const defaultState: RecommendProductsState = {
   loading: true,
@@ -17,7 +12,7 @@ const defaultState: RecommendProductsState = {
   productList: [],
 };
 
-export default (state = defaultState, action: RecommendProductAction) => {
+export default (state:RecommendProductsState = defaultState, action: RecommendProductAction) => {
   switch (action.type) {
     case FETCH_RECOMMEND_PRODUCTS_START:
       return { ...state, loading: true };
@@ -29,3 +24,4 @@ export default (state = defaultState, action: RecommendProductAction) => {
       return state;
   }
 };
+
