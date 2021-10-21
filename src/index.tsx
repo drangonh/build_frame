@@ -1,9 +1,10 @@
+import 'antd/dist/antd.css';
+import React from 'react';
 import { render } from 'react-dom';
+import './i18n/configs';
+import Root from './redux/react-redux-second';
+import './styles/index.less';
 
-import { Hello } from './components/Hello';
-
-function App() {
-  return <Hello name="world" />;
-}
-
-render(<App />, document.getElementById('react-mount-point'));
+render(
+  <Root />
+  , document.getElementById('vite-root'));
